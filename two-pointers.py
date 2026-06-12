@@ -31,6 +31,43 @@ for fast in range(len(nums)):
 print(nums)
     
 
+listlist = [4, 'h1', [5,4,3], 'yo', {'squirrel':'cute', 'Penguin':'Yummy'}]
+print(listlist[4]['Penguin'])
+
+
+
+y = list(range(5,16))
+y
+y[1:-1:2]
+
+
+
+input_arr = [2, 3,4,5,6,7,8]
+
+# reversing a list 
+
+reversed = input_arr[::-1]
+reversed
+
+
+# Split Words
+sentence = 'Words in a sentence are separated by spaces.'
+
+sentence.split(' ')
+
+newList = ''.join(sentence.split(' '))
+newList
+
+"""
+SET : used for Tracker
+
+"""
+nums = [1,2,3,3,4,4,5,6,7]
+set_num = set(nums) 
+set_num
+
+print(3 in set_num) # Faster than looping through the entire list
+
 
 
 

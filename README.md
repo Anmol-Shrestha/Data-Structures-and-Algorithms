@@ -1,3 +1,76 @@
+# Before you start
+Almost every interview question have three main components
+
+
+
+## C1.  Variables to change depending on the Rules and Condition
+SET is a data type that to track if something exists.
+
+### Use cases of Set: 
+1. Checking for duplicates
+2. Checking for existence
+3. Is the value in a current group
+4. Sliding Window
+
+## C2 Loops
+1. for i in range(n)
+2. for val in arr
+3. while start < end
+
+## C3 Rules and Conditions
+4. if, else, elif
+5. break, continue>
+
+
+## Big O Notation
+1. Binary Search : O(log n)
+2. Loops/Traversing List: O(n)
+3. Sorting  : O(n log n)
+4. Nested Loops : O(n^2) # mainly brute force, not a viable solution for interview problem
+
+### Optimization Trigger
+if input is 10^4, we can use algorithm that is O(n^2)
+If input size is 10^5, we would need to use algorithm that is O(n log n) or better
+
+
+
+# Hash Maps
+When brute force is too slow, we use Hash Map.
+It's structured as key and value.
+The valid key of a Hash Map cannot be changed.
+So data type like list, dictionaries cannot be used as Keys of a Hashmap because they are mutable.
+but data types like string, numbers, typles can be used.
+They are Hashables.
+
+### Without HashMap
+Hash Map allows you to remember the answers as you go.
+Imagine you had to do a complex calculation, you would want to store that isntead of doing it again.
+HashMap allows you to do that when you are solving a problem.
+Gives you a notebook that you can quickly check for answers.
+
+
+No HashMap = O(n)
+Hash Map = O(1)
+
+```
+my_map = {}
+
+for item in items:
+  if item not in my_map:
+    my_map[item] = 1
+  else:
+    my_map[item] += 1
+
+```
+
+
+
+
+
+
+
+
+
 # 🚀 The 3-Phase DSA Blueprint
 > Optimized for Engineering Assessments & Data Automation Tasks
 
