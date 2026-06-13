@@ -1,76 +1,117 @@
-"""
-Move Zeroes to the end.
-The input: [0,1,0,3,12]
-The expected output array : [1,3,12,0,0]
 
-
-Phase 1: Input Analysis
-
-Does the input always have zeroes?
-Is the order of non-zero number supposed to be preserved or sorted in ascending or descending order?
-What are the constraints?
-1. inplace reorganization
-
-
-Strategy: Since we are supposed to re-organize inplace, we need to use two-pointer same direction partiioning pattern
 
 """
+Two Pointers: The Trick is in How they move and Why they move
+arrays are sorted: 
 
-nums = [0, 1, 12, 3,0 ]
+Category 1(Same direction): Fast and Slow pointers go to the same direction
+Category 2(Opposite direction): 
 
-# we have two pointers starting at 0 and alnother pointer looping from 0
-# Guard Clauses : Empty Array 
+Use case: 
+1. Finding pairs
+2. Symetric parts of a structure: Palindrome
 
-slow = 0
+Left pointer starts 0
+Right pointer starts last index
+Move the pointer based on some condition
 
-for fast in range(len(nums)):
-    if nums[fast] != 0:
-        nums[slow],nums[fast]= nums[fast],nums[slow]
-        slow += 1
 
-print(nums)
+Use for :
+Palindrome
+Reversals
+merging sorted data
+K sized comparisons
+
+Ask Yourself: 
+Can i do this my walkign the array once by both sides?
+"""
+
+
+"""
+Palindrome
+"""
+
+input_string = input()
+def is_palindrome(s):
+    l, r = 0, len(s)-1
+    while l<r:
+        while l<r and not s[l].isalnum():
+            l += 1
+        while l<r and not s[r].isalnum():
+            r -= 1
+        if s[l].lower() != s[r].lower():
+            return False
+        l += 1
+        r -= 1
+        
+    return True
+        
     
-
-listlist = [4, 'h1', [5,4,3], 'yo', {'squirrel':'cute', 'Penguin':'Yummy'}]
-print(listlist[4]['Penguin'])
-
-
-
-y = list(range(5,16))
-y
-y[1:-1:2]
+    
+    
+is_palindrome(input_string)
 
 
-
-input_arr = [2, 3,4,5,6,7,8]
-
-# reversing a list 
-
-reversed = input_arr[::-1]
-reversed
-
-
-# Split Words
-sentence = 'Words in a sentence are separated by spaces.'
-
-sentence.split(' ')
-
-newList = ''.join(sentence.split(' '))
-newList
 
 """
-SET : used for Tracker
-
+Fast and Slow Pointer
 """
-nums = [1,2,3,3,4,4,5,6,7]
-set_num = set(nums) 
-set_num
 
-print(3 in set_num) # Faster than looping through the entire list
+class Node:
+    def __init__(self, val):
+        self.val = val
+        self.next = None
+        
+class LinkedList:
+    def __init__(self, value):
+        self.head = Node(value)
+        self.tail = self.head
+        
+    def append(self, value):
+        new_node = Node(value)
+        self.tail.next = new_node
+        self.tail = new_node
+        
+    def print_node(self):
+        temp = self.head
+        while temp:
+            print(temp.val)
+            temp = temp.next
+            
+    def return_head(self):
+        return self.head
+    
+        
+        
+            
+        
+        
+
+linked_list = LinkedList(1)
+linked_list.append(2)
+
+print(linked_list)
+linked_list.print_node()
+
+
+linked_list.append(3)
+linked_list.append(4)
+linked_list.append(5)
 
 
 
+def find_middle_node(ll):
+    slow = fast = ll.return_head()
+    
+    
+    while fast.next:
+        slow = slow.next
+        fast = fast.next.next
+    
+    return slow.val
 
 
+find_middle_node(linked_list)
 
+    
 
